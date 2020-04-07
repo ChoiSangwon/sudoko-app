@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
                 tablerow[i].addView(button[i][j]);
                 button[i][j].setText(Integer.toString(b[i][j]));
 
+                //숫자 버튼 클릭하고 있을때 색깔 변경하기.
                 final Button dd= button[i][j];
                 dd.setOnTouchListener(new View.OnTouchListener() {
                     @Override
@@ -76,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
+                // 숫자버튼 클릭 시 숫자 변경할 수 있는 레이어 띄우기.
                 final int finalI = i;
                 final int finalJ = j;
                 button[i][j].setOnClickListener(new View.OnClickListener() { public void onClick(View view) {
@@ -87,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
-        // 숫자 변경판 생
+        // 숫자 변경판 생성.
         TableRow tablerow2[] = new TableRow[4];
         final Button button2[][]=new Button[4][3];
         for(int i=0;i<4;i++){
@@ -104,6 +106,8 @@ public class MainActivity extends AppCompatActivity {
                 tablerow2[q].addView(button2[q][w]);
                 if(q<3)
                     button2[q][w].setText(Integer.toString(q*3+w+1));
+
+                // 숫자패드에서 숫자 클릭하면 숫자판의 숫자 변경.
                 final int finalQ = q;
                 final int finalW = w;
                 button2[q][w].setOnClickListener(new View.OnClickListener() {
